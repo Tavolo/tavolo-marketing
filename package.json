@@ -1,0 +1,13 @@
+{
+  "name": "tavolo-marketing",
+  "version": "1.0.0",
+  "description": "Tavolo marketing site and landing pages",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.2.0"
+  }
+}
