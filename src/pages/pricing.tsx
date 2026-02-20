@@ -17,12 +17,12 @@ export default function Pricing() {
 
 function PricingHero() {
   return (
-    <section className="bg-gradient-to-br from-tavolo-blue-900 to-tavolo-blue-800 text-white py-16">
+    <section className="bg-brand-950 text-white py-24 pt-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-display italic mb-6">
           Simple, transparent pricing
         </h1>
-        <p className="text-xl text-tavolo-blue-200 max-w-2xl mx-auto">
+        <p className="text-xl text-brand-300 max-w-2xl mx-auto">
           No per-cover fees. No hidden costs. Just a flat monthly rate that makes sense as you scale.
         </p>
       </div>
@@ -85,38 +85,38 @@ function PricingTiers() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-brand-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className={`rounded-2xl p-8 ${
+              className={`rounded-3xl p-8 ${
                 tier.highlighted
-                  ? 'bg-tavolo-blue-900 text-white ring-4 ring-tavolo-orange-400 scale-105'
-                  : 'bg-white border border-gray-200'
+                  ? 'bg-brand-950 text-white ring-2 ring-accent scale-105 shadow-2xl'
+                  : 'bg-white border border-brand-200 shadow-lg'
               }`}
             >
               {tier.highlighted && (
-                <span className="inline-block bg-tavolo-orange-400 text-white text-sm font-medium px-3 py-1 rounded-full mb-4">
+                <span className="inline-block bg-accent text-white text-sm font-medium px-3 py-1 rounded-full mb-4">
                   Most Popular
                 </span>
               )}
-              <h3 className={`text-2xl font-bold ${tier.highlighted ? 'text-white' : 'text-tavolo-blue-900'}`}>
+              <h3 className={`text-2xl font-semibold ${tier.highlighted ? 'text-white' : 'text-brand-950'}`}>
                 {tier.name}
               </h3>
               <div className="mt-4 flex items-baseline">
                 {tier.price !== 'Custom' && (
-                  <span className={`text-lg ${tier.highlighted ? 'text-tavolo-blue-200' : 'text-gray-500'}`}>$</span>
+                  <span className={`text-lg ${tier.highlighted ? 'text-brand-400' : 'text-brand-500'}`}>$</span>
                 )}
-                <span className={`text-5xl font-bold ${tier.highlighted ? 'text-white' : 'text-tavolo-blue-900'}`}>
+                <span className={`text-5xl font-display italic ${tier.highlighted ? 'text-white' : 'text-brand-950'}`}>
                   {tier.price}
                 </span>
               </div>
-              <p className={`text-sm mt-1 ${tier.highlighted ? 'text-tavolo-blue-200' : 'text-gray-500'}`}>
+              <p className={`text-sm mt-1 ${tier.highlighted ? 'text-brand-400' : 'text-brand-500'}`}>
                 {tier.period}
               </p>
-              <p className={`mt-4 ${tier.highlighted ? 'text-tavolo-blue-100' : 'text-gray-600'}`}>
+              <p className={`mt-4 ${tier.highlighted ? 'text-brand-300' : 'text-brand-600'}`}>
                 {tier.description}
               </p>
 
@@ -125,7 +125,7 @@ function PricingTiers() {
                   <li key={feature} className="flex items-start">
                     <svg
                       className={`w-5 h-5 mr-3 flex-shrink-0 ${
-                        tier.highlighted ? 'text-tavolo-orange-400' : 'text-green-500'
+                        tier.highlighted ? 'text-accent' : 'text-green-500'
                       }`}
                       fill="currentColor"
                       viewBox="0 0 20 20"
@@ -136,7 +136,7 @@ function PricingTiers() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className={tier.highlighted ? 'text-tavolo-blue-100' : 'text-gray-600'}>
+                    <span className={tier.highlighted ? 'text-brand-200' : 'text-brand-600'}>
                       {feature}
                     </span>
                   </li>
@@ -145,10 +145,10 @@ function PricingTiers() {
 
               <Link
                 href="/demo"
-                className={`mt-8 block w-full text-center py-3 px-6 rounded-lg font-medium transition-colors ${
+                className={`mt-8 block w-full text-center py-3 px-6 rounded-full font-medium transition-all duration-300 ${
                   tier.highlighted
-                    ? 'bg-tavolo-orange-400 text-white hover:bg-tavolo-orange-500'
-                    : 'bg-tavolo-blue-900 text-white hover:bg-tavolo-blue-800'
+                    ? 'bg-accent text-white hover:bg-accent-dark shadow-lg hover:shadow-xl'
+                    : 'bg-brand-950 text-white hover:bg-brand-800'
                 }`}
               >
                 {tier.cta}
@@ -188,13 +188,13 @@ function PricingFAQ() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="section-heading mb-12">Frequently Asked Questions</h2>
+        <h2 className="section-heading text-center mb-12">Frequently Asked Questions</h2>
 
         <div className="space-y-8">
           {faqs.map((faq) => (
-            <div key={faq.question} className="border-b border-gray-200 pb-8">
-              <h3 className="text-lg font-semibold text-tavolo-blue-900 mb-3">{faq.question}</h3>
-              <p className="text-gray-600">{faq.answer}</p>
+            <div key={faq.question} className="border-b border-brand-200 pb-8">
+              <h3 className="text-lg font-semibold text-brand-950 mb-3">{faq.question}</h3>
+              <p className="text-brand-600">{faq.answer}</p>
             </div>
           ))}
         </div>
@@ -205,15 +205,15 @@ function PricingFAQ() {
 
 function PricingCTA() {
   return (
-    <section className="py-16 bg-tavolo-blue-50">
+    <section className="py-20 bg-brand-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-tavolo-blue-900 mb-4">
+        <h2 className="text-2xl md:text-3xl font-display italic text-brand-950 mb-4">
           Not sure which plan is right for you?
         </h2>
-        <p className="text-gray-600 mb-8">
+        <p className="text-brand-600 mb-8">
           Our team can help you find the perfect fit for your restaurant group.
         </p>
-        <Link href="/demo" className="btn-primary">
+        <Link href="/demo" className="btn-accent">
           Talk to Sales
         </Link>
       </div>
