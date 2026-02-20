@@ -18,13 +18,13 @@ export default function TavoloVsOpenTable() {
 
 function CompareHero() {
   return (
-    <section className="bg-gradient-to-br from-tavolo-blue-900 to-tavolo-blue-800 text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-brand-950 text-white py-24 pt-32">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display italic mb-6">
             Tavolo vs OpenTable
           </h1>
-          <p className="text-xl text-tavolo-blue-200">
+          <p className="text-xl text-brand-300">
             Which reservation platform is right for your restaurant group? Here&apos;s a detailed comparison to help you decide.
           </p>
         </div>
@@ -86,27 +86,27 @@ function ComparisonTable() {
   ];
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-white">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b-2 border-gray-200">
-                <th className="py-4 px-4 text-left text-sm font-semibold text-gray-600 uppercase tracking-wide">
+              <tr className="border-b-2 border-brand-200">
+                <th className="py-4 px-4 text-left text-sm font-semibold text-brand-500 uppercase tracking-wide">
                   Feature
                 </th>
-                <th className="py-4 px-4 text-left text-sm font-semibold text-tavolo-orange-500 uppercase tracking-wide">
+                <th className="py-4 px-4 text-left text-sm font-semibold text-accent uppercase tracking-wide">
                   Tavolo
                 </th>
-                <th className="py-4 px-4 text-left text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                <th className="py-4 px-4 text-left text-sm font-semibold text-brand-500 uppercase tracking-wide">
                   OpenTable
                 </th>
               </tr>
             </thead>
             <tbody>
               {comparisons.map((row, idx) => (
-                <tr key={row.feature} className={idx % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                  <td className="py-4 px-4 font-medium text-tavolo-blue-900">
+                <tr key={row.feature} className={idx % 2 === 0 ? 'bg-brand-50' : 'bg-white'}>
+                  <td className="py-4 px-4 font-medium text-brand-950">
                     {row.feature}
                   </td>
                   <td className="py-4 px-4">
@@ -116,11 +116,11 @@ function ComparisonTable() {
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
                       ) : (
-                        <svg className="w-5 h-5 text-gray-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-5 h-5 text-brand-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
                         </svg>
                       )}
-                      <span className={row.tavoloWins ? 'text-gray-900' : 'text-gray-600'}>{row.tavolo}</span>
+                      <span className={row.tavoloWins ? 'text-brand-900' : 'text-brand-600'}>{row.tavolo}</span>
                     </div>
                   </td>
                   <td className="py-4 px-4">
@@ -134,7 +134,7 @@ function ComparisonTable() {
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                         </svg>
                       )}
-                      <span className={!row.tavoloWins ? 'text-gray-900' : 'text-gray-600'}>{row.opentable}</span>
+                      <span className={!row.tavoloWins ? 'text-brand-900' : 'text-brand-600'}>{row.opentable}</span>
                     </div>
                   </td>
                 </tr>
@@ -172,17 +172,19 @@ function DetailedComparison() {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="section-heading mb-12">A Deeper Look</h2>
+    <section className="py-20 bg-brand-50">
+      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <h2 className="section-heading text-center mb-16">
+          A <span className="font-display italic">Deeper Look</span>
+        </h2>
 
-        <div className="space-y-12">
+        <div className="space-y-8">
           {sections.map((section) => (
-            <div key={section.title} className="bg-white rounded-xl p-8 shadow-sm">
-              <h3 className="text-xl font-bold text-tavolo-blue-900 mb-4">{section.title}</h3>
-              <p className="text-gray-600 mb-4">{section.description}</p>
-              <div className="bg-tavolo-orange-50 border-l-4 border-tavolo-orange-400 p-4 rounded-r-lg">
-                <p className="text-tavolo-blue-900">
+            <div key={section.title} className="card">
+              <h3 className="text-xl font-semibold text-brand-950 mb-4">{section.title}</h3>
+              <p className="text-brand-600 mb-6">{section.description}</p>
+              <div className="bg-accent/10 border-l-4 border-accent p-5 rounded-r-xl">
+                <p className="text-brand-950">
                   <span className="font-semibold">Tavolo advantage:</span> {section.tavoloAdvantage}
                 </p>
               </div>
@@ -196,31 +198,33 @@ function DetailedComparison() {
 
 function CostCalculator() {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="section-heading mb-4">See How Much You Could Save</h2>
-        <p className="section-subheading mb-12">
+    <section className="py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <h2 className="section-heading text-center mb-4">
+          See How Much You Could <span className="font-display italic">Save</span>
+        </h2>
+        <p className="section-subheading text-center mx-auto mb-16">
           Most restaurant groups save 30-50% after switching from OpenTable to Tavolo.
         </p>
 
-        <div className="bg-tavolo-blue-50 rounded-2xl p-8">
+        <div className="bg-brand-100 rounded-3xl p-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-tavolo-orange-500 mb-2">$42,000</div>
-              <p className="text-gray-600">Average annual savings for a 10-location group</p>
+              <div className="text-5xl font-display italic text-accent mb-3">$42,000</div>
+              <p className="text-brand-600">Average annual savings for a 10-location group</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-tavolo-orange-500 mb-2">35%</div>
-              <p className="text-gray-600">Average cost reduction vs per-cover pricing</p>
+              <div className="text-5xl font-display italic text-accent mb-3">35%</div>
+              <p className="text-brand-600">Average cost reduction vs per-cover pricing</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-tavolo-orange-500 mb-2">7 days</div>
-              <p className="text-gray-600">Average migration time from OpenTable</p>
+              <div className="text-5xl font-display italic text-accent mb-3">7 days</div>
+              <p className="text-brand-600">Average migration time from OpenTable</p>
             </div>
           </div>
 
-          <div className="mt-8 text-center">
-            <Link href="/demo" className="btn-primary">
+          <div className="mt-10 text-center">
+            <Link href="/demo" className="btn-accent">
               Get a Custom Quote
             </Link>
           </div>
@@ -255,25 +259,28 @@ function MigrationSection() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-tavolo-blue-900 to-tavolo-blue-800 text-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+    <section className="py-24 bg-brand-950 text-white relative overflow-hidden">
+      <div className="absolute inset-0 noise-bg" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px] translate-x-1/2 -translate-y-1/2" />
+
+      <div className="max-w-4xl mx-auto px-6 lg:px-8 relative">
+        <h2 className="text-4xl md:text-5xl font-display italic text-center mb-4">
           Ready to switch from OpenTable?
         </h2>
-        <p className="text-xl text-tavolo-blue-200 text-center mb-12">
+        <p className="text-xl text-brand-300 text-center mb-16">
           We make migration easy. Here&apos;s how it works:
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {steps.map((step) => (
-            <div key={step.number} className="bg-white/10 rounded-xl p-6">
+            <div key={step.number} className="bg-white/10 backdrop-blur rounded-2xl p-6">
               <div className="flex items-start">
-                <span className="flex-shrink-0 w-8 h-8 bg-tavolo-orange-400 rounded-full flex items-center justify-center font-bold text-white mr-4">
+                <span className="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center font-bold text-white mr-4">
                   {step.number}
                 </span>
                 <div>
                   <h3 className="font-semibold text-white mb-2">{step.title}</h3>
-                  <p className="text-tavolo-blue-200">{step.description}</p>
+                  <p className="text-brand-300">{step.description}</p>
                 </div>
               </div>
             </div>
@@ -281,7 +288,7 @@ function MigrationSection() {
         </div>
 
         <div className="text-center">
-          <Link href="/demo" className="btn-primary text-lg px-8 py-4">
+          <Link href="/demo" className="btn-accent text-lg">
             Start Your Migration
           </Link>
         </div>
